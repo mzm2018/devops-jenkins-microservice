@@ -1,10 +1,17 @@
 pipeline {
 	agent any
 	//agent { docker { image 'maven:3.6.3'}}
+	enviornment {
+		maven = tool 'maven'
+		PATH = "maven:$PATH"
+	}
+
+
 	stages {
 		stage('Build') {
 			steps {
 				echo 'build;'
+				sh 'mvn --version'
 			}
 		}
 			stage('Test') {
