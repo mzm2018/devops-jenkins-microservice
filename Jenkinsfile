@@ -4,13 +4,13 @@ pipeline {
 	stages {
 		stage('Build') {
 			steps {
-				//echo 'mvn --version'
-				echo 'build'
-				echo "$PATH"
-				echo "BUILD_NUMBER - $env.BUILD_NUMBER"
-				echo "JOB_NAME - $env.JOB_NAME"
-				echo "BUILD_TAG - $env.BUILD_TAG"
-				echo "BUILD_URL - $env.BUILD_URL"
+				echo 'build;'
+			}
+		}
+			stage('Test') {
+			steps {
+				echo "Test"
+			}
 		}
 	} 
 	post {
@@ -25,4 +25,3 @@ pipeline {
 		}
 	}
 	}
-}
